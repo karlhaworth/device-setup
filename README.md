@@ -1,6 +1,8 @@
 # Device Setup
 
-## Setup Mac
+## Mac
+
+### Setup
 
 ```zsh
 cd mac
@@ -8,7 +10,7 @@ cd mac
 bash start.sh
 ```
 
-## Update Mac
+### Update
 
 ```zsh
 cd mac
@@ -18,6 +20,6 @@ asdf plugin update --all
 sudo softwareupdate --install --all
 ```
 
-## Helpful Links
+### Helpful Links
 
 - [store sensitive environment variables](https://medium.com/@johnjjung/how-to-store-sensitive-environment-variables-on-macos-76bd5ba464f6)
