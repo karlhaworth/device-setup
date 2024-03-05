@@ -2,7 +2,7 @@
 
 git config --global user.name "karlhaworth"
 git config --global user.email github@karlhaworth.com
-
+git config --global pull.rebase false
 
 # SSH KEY
 
