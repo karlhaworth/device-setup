@@ -20,3 +20,11 @@ gpg --armor --export <your key id>
 git config --global gpg.program $(which gpg)
 git config --global user.signingkey <your key id>
 git config --global commit.gpgsign true
+
+# Global .gitignore
+
+cat > ~/.gitignore << EOF
+.tool-versions
+EOF
+
+git config --global core.excludesfile ~/.gitignore
