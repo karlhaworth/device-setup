@@ -14,10 +14,13 @@ case $type in
   h|H) brew bundle install --file=brew/Brewfile.home ;; 
 esac
 
-### ASDF
+### NVM
 
-bash scripts/asdf-setup.sh
-bash scripts/asdf-plugins.sh
+bash scripts/nvm.sh
+
+### JENV
+
+bash scripts/jenv.sh
 
 ### ZSH
 
