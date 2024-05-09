@@ -8,14 +8,14 @@ sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.
 
 #### Add OhMyZSH plugins
 
-sed -ir 's|^plugins=(\(.*\))|plugins=(\1 kubectl history sudo emoji encode64 web-search asdf)|g' .zshrc
+sed -ir 's|^plugins=(\(.*\))|plugins=(\1 kubectl history sudo)|g' .zshrc
 
 #### Set Theme - PowerLevel10k
 
 #### https://github.com/romkatv/powerlevel10k#oh-my-zsh
 
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
-sed -i 's|ZSH_THEME=.*|ZSH_THEME="powerlevel10k/powerlevel10k"|g' ~/.zshrc
+gsed -i 's|ZSH_THEME=.*|ZSH_THEME="powerlevel10k/powerlevel10k"|g' ~/.zshrc
 
 #### Install Autosuggestions
 
