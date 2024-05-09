@@ -16,10 +16,3 @@ sed -ir 's|^plugins=(\(.*\))|plugins=(\1 kubectl history sudo)|g' .zshrc
 
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 gsed -i 's|ZSH_THEME=.*|ZSH_THEME="powerlevel10k/powerlevel10k"|g' ~/.zshrc
-
-#### Install Autosuggestions
-
-#### Install ZSH Suggestions
-
-git clone https://github.com/zsh-users/zsh-completions ${ZSH_CUSTOM:=~/.oh-my-zsh/custom}/plugins/zsh-completions
-sed -ir 's|^plugins=(\(.*\))|plugins=(\1 zsh-completions)|g' ~/.zshrc
