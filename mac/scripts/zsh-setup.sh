@@ -19,11 +19,6 @@ gsed -i 's|ZSH_THEME=.*|ZSH_THEME="powerlevel10k/powerlevel10k"|g' ~/.zshrc
 
 #### Install Autosuggestions
 
-#### https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md
-
-git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-sed -ir 's|^plugins=(\(.*\))|plugins=(\1 zsh-autosuggestions)|g' ~/.zshrc
-
 #### Install ZSH Suggestions
 
 git clone https://github.com/zsh-users/zsh-completions ${ZSH_CUSTOM:=~/.oh-my-zsh/custom}/plugins/zsh-completions
