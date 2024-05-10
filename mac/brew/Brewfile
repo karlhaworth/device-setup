@@ -7,7 +7,7 @@ brew "aquasecurity/trivy/trivy"
 
 brew "act"
 
-brew "asdf"
+brew "zsh-autosuggestions"
 
 brew "colima"
 brew "docker"
