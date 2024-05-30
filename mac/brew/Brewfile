@@ -65,13 +65,6 @@ brew "azure-cli"
 
 brew "grype"
 
-# cat replacement
-brew "bat"
-# ls replacement
-brew "exa"
-# ping graph
-brew "gping"
-
 cask "azure-data-studio"
 cask "chromium"
 cask "clocker"
