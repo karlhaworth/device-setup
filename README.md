@@ -16,7 +16,6 @@ bash start.sh
 cd mac
 
 brew upgrade
-asdf plugin update --all
 sudo softwareupdate --install --all
 ```
 
