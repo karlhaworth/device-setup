@@ -13,8 +13,6 @@ bash start.sh
 ### Update
 
 ```zsh
-cd mac
-
 brew upgrade
 sudo softwareupdate --install --all
 ```
