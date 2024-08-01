@@ -29,8 +29,16 @@ brew cleanup --prune=all --dry-run
 
 #### Colima
 
+##### Standard
+
 ```bash
 colima start --memory 10 --cpu 6 --disk 100 --arch aarch64 --network-address
+```
+
+##### x86_64
+
+```bash
+colima start --memory 10 --cpu 6 --disk 100 --arch x86_64
 ```
 
 ### Helpful Links
