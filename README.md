@@ -44,3 +44,4 @@ colima start --memory 10 --cpu 6 --disk 100 --arch x86_64
 ### Helpful Links
 
 - [store sensitive environment variables](https://medium.com/@johnjjung/how-to-store-sensitive-environment-variables-on-macos-76bd5ba464f6)
+- [system-wide mic mute](https://brett.cloud/mic-mute/)
