@@ -28,3 +28,4 @@ cat > ~/.gitignore << EOF
 EOF
 
 git config --global core.excludesfile ~/.gitignore
+git config --global push.autoSetupRemote true
