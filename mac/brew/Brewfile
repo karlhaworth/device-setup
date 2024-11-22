@@ -64,6 +64,7 @@ brew "gifski"
 brew "azure-cli"
 
 brew "grype"
+brew "dive"
 
 brew "krew"
 
