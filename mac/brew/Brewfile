@@ -67,6 +67,8 @@ brew "grype"
 
 brew "krew"
 
+brew "docker-credential-helper"
+
 cask "azure-data-studio"
 cask "chromium"
 cask "clocker"
