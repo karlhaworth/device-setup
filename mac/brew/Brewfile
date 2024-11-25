@@ -89,6 +89,7 @@ cask "rectangle"
 cask "visual-studio-code"
 cask "zoom"
 
+vscode "bierner.markdown-mermaid"
 vscode "4ops.terraform"
 vscode "adamhartford.vscode-base64"
 vscode "adriansanguineti.json-parse-validator"
