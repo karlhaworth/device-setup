@@ -68,6 +68,8 @@ brew "dive"
 
 brew "krew"
 
+brew "shellcheck"
+
 brew "docker-credential-helper"
 
 cask "azure-data-studio"
