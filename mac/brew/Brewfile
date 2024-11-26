@@ -70,6 +70,8 @@ brew "krew"
 
 brew "shellcheck"
 
+brew "pipenv"
+
 brew "docker-credential-helper"
 
 cask "azure-data-studio"
