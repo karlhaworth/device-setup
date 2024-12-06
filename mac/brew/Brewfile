@@ -89,7 +89,6 @@ cask "microsoft-edge"
 cask "mockoon"
 cask "postman"
 cask "powershell"
-cask "rectangle"
 cask "visual-studio-code"
 cask "zoom"
 
