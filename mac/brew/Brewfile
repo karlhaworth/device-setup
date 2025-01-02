@@ -70,7 +70,7 @@ brew "krew"
 
 brew "shellcheck"
 
-brew "pipenv"
+brew "uv"
 
 brew "docker-credential-helper"
 
