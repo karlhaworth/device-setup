@@ -12,6 +12,7 @@ brew "colima"
 brew "docker"
 
 brew "dockutil"
+brew "docker-buildx"
 
 # GNU Core Utils
 brew "coreutils"
