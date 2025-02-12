@@ -82,6 +82,7 @@ cask "keepingyouawake"
 cask "microsoft-edge"
 cask "visual-studio-code"
 cask "zoom"
+cask "trex"
 
 vscode "4ops.terraform"
 vscode "adamhartford.vscode-base64"
