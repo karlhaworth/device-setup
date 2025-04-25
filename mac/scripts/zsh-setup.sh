@@ -10,9 +10,5 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 
 #### https://github.com/romkatv/powerlevel10k#oh-my-zsh
 
-git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
-gsed -i 's|ZSH_THEME=.*|ZSH_THEME="powerlevel10k/powerlevel10k"|g' ~/.zshrc
-
-#### Autocomplete
-
-gsed -i '1s|^|source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh\n|' ~/.zshrc
+brew install powerlevel10k
+echo "source $(brew --prefix)/share/powerlevel10k/powerlevel10k.zsh-theme" >>~/.zshrc
