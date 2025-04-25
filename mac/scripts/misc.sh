@@ -5,12 +5,10 @@ brew install binutils
 brew install diffutils
 brew install ed
 brew install findutils
-brew install flex
 brew install gawk
 brew install gnu-sed
 brew install grep
 brew install gzip
-brew install less
 brew install make
 brew install nano
 brew install screen
@@ -26,7 +24,6 @@ export PATH="/opt/homebrew/opt/binutils/bin:$PATH"
 export PATH="/opt/homebrew/opt/findutils/libexec/gnubin:$PATH"
 export PATH="/opt/homebrew/opt/gawk/libexec/gnubin:$PATH"
 export PATH="/opt/homebrew/opt/ed/bin:$PATH"
-export PATH="/opt/homebrew/opt/flex/bin:$PATH"
 export PATH="/opt/homebrew/opt/grep/libexec/gnubin:$PATH"
 export PATH="/opt/homebrew/opt/make/libexec/gnubin:$PATH"
 export PATH="/opt/homebrew/opt/zip/bin:$PATH"
