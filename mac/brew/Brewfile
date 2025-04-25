@@ -1,11 +1,6 @@
 tap "atombender/ktail"
 brew "atombender/ktail/ktail"
 
-brew "hashicorp/tap/vault"
-brew "chainguard-dev/tap/chainctl"
-
-brew "act"
-
 brew "zsh-autosuggestions"
 
 brew "colima"
@@ -15,13 +10,13 @@ brew "dockutil"
 brew "docker-buildx"
 
 # GNU Core Utils
-brew "coreutils"
+brew "uutils-coreutils"
 brew "autoconf"
 brew "bash"
 brew "binutils"
-brew "diffutils"
+brew "uutils-diffutils"
 brew "ed"
-brew "findutils"
+brew "uutils-findutils"
 brew "flex"
 brew "gawk"
 brew "gnu-indent"

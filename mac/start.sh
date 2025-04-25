@@ -42,3 +42,9 @@ bash scripts/krew-plugins.sh
 ### GIT
 
 bash scripts/git-setup.sh
+
+### Extras
+
+#### Set Go to another directory
+
+go env -w GOPATH=$HOME/.go
