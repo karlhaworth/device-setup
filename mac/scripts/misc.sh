@@ -1,17 +1,13 @@
 # GNU Core Utils
 brew install coreutils
 brew install autoconf
-brew install bash
 brew install binutils
 brew install diffutils
 brew install ed
 brew install findutils
 brew install flex
 brew install gawk
-brew install gnu-indent
 brew install gnu-sed
-brew install gnu-tar
-brew install gnu-which
 brew install grep
 brew install gzip
 brew install less
@@ -23,6 +19,13 @@ brew install wdiff
 brew install wget
 brew install zip
 
+cat << EOF >> ~/.zshrc
+export PATH="/opt/homebrew/opt/gnu-sed/libexec/gnubin:$PATH"
+export PATH="/opt/homebrew/opt/coreutils/libexec/gnubin:$PATH"
+export PATH="/opt/homebrew/opt/binutils/bin:$PATH"
+export PATH="/opt/homebrew/opt/findutils/libexec/gnubin:$PATH"
+export PATH="/opt/homebrew/opt/gawk/libexec/gnubin:$PATH"
+EOF
 
 brew install terraform
 
