@@ -12,3 +12,6 @@ fi
 brew install colima
 
 brew services start colima
+
+brew install grype
+brew install dive
