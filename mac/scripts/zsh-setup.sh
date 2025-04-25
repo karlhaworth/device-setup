@@ -6,10 +6,6 @@
 
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
-#### Add OhMyZSH plugins
-
-sed -ir 's|^plugins=(\(.*\))|plugins=(\1 kubectl history sudo)|g' ~/.zshrc
-
 #### Set Theme - PowerLevel10k
 
 #### https://github.com/romkatv/powerlevel10k#oh-my-zsh
