@@ -13,3 +13,5 @@ EOF
 source ~/.zshrc
 
 nvm install --lts --default
+
+brew install yarn
