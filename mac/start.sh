@@ -5,15 +5,15 @@ cd scripts
 
 ./brew.sh
 
+./casks.sh
+
+./vscode.sh
+
 ./misc.sh
 
 ./git-setup.sh
 
 ./shell.sh
-
-./casks.sh
-
-./vscode.sh
 
 ./docker.sh
 
