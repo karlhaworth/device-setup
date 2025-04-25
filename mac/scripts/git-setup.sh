@@ -8,11 +8,22 @@ echo
 read -p "Enter email: " email
 echo
 
+# Brew installs
+
+brew install git
+brew install gh
+
 # Setup GIT
 
 git config --global user.name "$name"
 git config --global user.email "$email"
 git config --global pull.rebase false
+
+
+# Code Signing
+brew install gpg2
+brew install gnupg
+brew install pinentry-mac
 
 # SSH KEY
 
