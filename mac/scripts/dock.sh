@@ -1,0 +1,8 @@
+dockutil -a "/Applications/Safari.app"
+dockutil -a "/Applications/Microsoft Outlook.app"
+dockutil -a "/Applications/Microsoft Teams.app"
+dockutil -a "/Applications/Slack.app"
+dockutil -a "/Applications/Visual Studio Code.app"
+dockutil -a "/Applications/iTerm.app"
+dockutil -a "/Applications/Insomnia.app"
+dockutil -a "/Applications/KeePassXC.app"
