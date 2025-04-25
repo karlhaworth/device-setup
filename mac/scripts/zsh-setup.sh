@@ -16,8 +16,3 @@ gsed -i 's|ZSH_THEME=.*|ZSH_THEME="powerlevel10k/powerlevel10k"|g' ~/.zshrc
 #### Autocomplete
 
 gsed -i '1s|^|source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh\n|' ~/.zshrc
-
-#### OTHERS
-
-gsed -i '1s|^|export PATH=/opt/homebrew/opt/coreutils/libexec/gnubin:$PATH\n|' ~/.zshrc
-gsed -i '1s|^|export PATH=/opt/homebrew/opt/gnu-sed/libexec/gnubin:$PATH\n|' ~/.zshrc
