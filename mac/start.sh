@@ -1,29 +1,34 @@
-read -n1 -p "Work or Home? [w,h]" type 
-
-
 ### XCODE
 xcode-select --install
 
-### BREW
+cd scripts
 
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+./brew.sh
 
-echo >> ~/.zprofile
-echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
-eval "$(/opt/homebrew/bin/brew shellenv)"
+./misc.sh
 
-### Node
+./git-setup.sh
 
-bash scripts/node.sh
+./shell.sh
 
-### Java
+./casks.sh
 
-bash scripts/java.sh
+./vscode.sh
 
-### ZSH
+./docker.sh
 
-bash scripts/zsh-setup.sh
+./kubernetes.sh
 
-### GIT
+./python.sh
 
-bash scripts/git-setup.sh
+./node.sh
+
+./java.sh
+
+./go.sh
+
+./zsh-setup.sh
+
+./zsh-shortcuts.sh
+
+./dock.sh
