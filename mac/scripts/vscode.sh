@@ -31,3 +31,9 @@ code --install-extension waderyan.gitblame
 code --install-extension wdhongtw.gpg-indicator
 
 jq '."git.defaultCloneDirectory" = "~/dev"' ~/Library/Application\ Support/Code/User/settings.json
+
+cat >> ~/.zshrc << EOF
+
+export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+
+EOF
