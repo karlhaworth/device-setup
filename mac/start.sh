@@ -5,15 +5,17 @@ cd scripts
 
 ./brew.sh
 
+./zsh-setup.sh
+
+./shell.sh
+
+./misc.sh
+
 ./casks.sh
 
 ./vscode.sh
 
-./misc.sh
-
 ./git-setup.sh
-
-./shell.sh
 
 ./docker.sh
 
@@ -26,8 +28,6 @@ cd scripts
 ./java.sh
 
 ./go.sh
-
-./zsh-setup.sh
 
 ./zsh-shortcuts.sh
 
