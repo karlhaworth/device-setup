@@ -7,7 +7,7 @@ eval "$(jenv init -)"
 
 EOF
 
-brew install openjdk@17 openjdk@21 openjdk@24
+brew install openjdk@17 openjdk@21 openjdk
 
 source ~/.zshrc
 
