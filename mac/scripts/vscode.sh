@@ -29,3 +29,5 @@ code --install-extension rosshamish.kuskus-kusto-language-server
 code --install-extension streetsidesoftware.code-spell-checker
 code --install-extension waderyan.gitblame
 code --install-extension wdhongtw.gpg-indicator
+
+jq '."git.defaultCloneDirectory" = "~/dev"' ~/Library/Application\ Support/Code/User/settings.json
