@@ -14,3 +14,5 @@ source ~/.zshrc
 jenv add /opt/homebrew/opt/openjdk@17/libexec/openjdk.jdk/Contents/Home
 
 jenv add /opt/homebrew/opt/openjdk@21/libexec/openjdk.jdk/Contents/Home
+
+brew install maven gradle
