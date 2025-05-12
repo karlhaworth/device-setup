@@ -31,7 +31,7 @@ code --install-extension waderyan.gitblame
 code --install-extension wdhongtw.gpg-indicator
 
 yq -iP '."git.defaultCloneDirectory" = "~/dev"' ~/Library/Application\ Support/Code/User/settings.json -o json
-jq -iP ".\"files.dialog.defaultPath\" = \"$HOME/dev\"" ~/Library/Application\ Support/Code/User/settings.json -o json
+yq -iP ".\"files.dialog.defaultPath\" = \"$HOME/dev\"" ~/Library/Application\ Support/Code/User/settings.json -o json
 
 cat >> ~/.zshrc << EOF
 
