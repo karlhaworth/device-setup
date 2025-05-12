@@ -30,8 +30,8 @@ code --install-extension streetsidesoftware.code-spell-checker
 code --install-extension waderyan.gitblame
 code --install-extension wdhongtw.gpg-indicator
 
-jq '."git.defaultCloneDirectory" = "~/dev"' ~/Library/Application\ Support/Code/User/settings.json
-jq ".\"files.dialog.defaultPath\" = \"$HOME/dev\"" ~/Library/Application\ Support/Code/User/settings.json
+yq -iP '."git.defaultCloneDirectory" = "~/dev"' ~/Library/Application\ Support/Code/User/settings.json -o json
+jq -iP ".\"files.dialog.defaultPath\" = \"$HOME/dev\"" ~/Library/Application\ Support/Code/User/settings.json -o json
 
 cat >> ~/.zshrc << EOF
 
