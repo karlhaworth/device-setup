@@ -5,11 +5,11 @@ cd scripts
 
 ./brew.sh
 
+./misc.sh
+
 ./zsh-setup.sh
 
 ./shell.sh
-
-./misc.sh
 
 ./casks.sh
 
