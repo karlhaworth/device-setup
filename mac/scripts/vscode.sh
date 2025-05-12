@@ -31,6 +31,7 @@ code --install-extension waderyan.gitblame
 code --install-extension wdhongtw.gpg-indicator
 
 jq '."git.defaultCloneDirectory" = "~/dev"' ~/Library/Application\ Support/Code/User/settings.json
+jq '."files.dislog.defaultPath" = "~/dev"' ~/Library/Application\ Support/Code/User/settings.json
 
 cat >> ~/.zshrc << EOF
 
