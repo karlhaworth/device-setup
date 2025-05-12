@@ -16,6 +16,7 @@ brew install watch
 brew install wdiff
 brew install wget
 brew install zip
+brew install yq
 
 cat << EOF >> ~/.zshrc
 export PATH="/opt/homebrew/opt/gnu-sed/libexec/gnubin:$PATH"
