@@ -32,3 +32,5 @@ cd scripts
 ./zsh-shortcuts.sh
 
 ./dock.sh
+
+./file_system.sh
