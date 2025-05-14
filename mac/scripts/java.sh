@@ -20,3 +20,5 @@ brew install maven gradle
 jenv enable-plugin export
 
 brew install intellij-idea
+
+idea installPlugins io.snyk-intelli-plugin org.sonarlint.idea com.github.copilot
