@@ -43,7 +43,7 @@ gpg --full-gen-key --batch <(echo "Key-Type: 1"; \
                              echo "Name-Real: $name"; \
                              echo "Name-Email: $email"; \
                              echo "%no-protection"; )
-KEYID=$(gpg -k | ggrep -Po "([A-Z0-9]){40}")
+KEYID=$(gpg -k | awk '{for(i=1;i<=NF;i++) if($i ~ /^[A-F0-9]{40}$/) print $i}')
 git config --global gpg.program $(which gpg)
 git config --global user.signingkey $KEYID
 git config --global commit.gpgsign true
