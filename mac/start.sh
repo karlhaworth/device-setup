@@ -7,7 +7,7 @@ cd scripts
 
 ./misc.sh
 
-./zsh-setup.sh
+./zsh.sh
 
 ./shell.sh
 
