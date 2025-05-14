@@ -15,7 +15,7 @@ cd scripts
 
 ./vscode.sh
 
-./git-setup.sh
+./git.sh
 
 ./docker.sh
 
@@ -33,4 +33,4 @@ cd scripts
 
 ./dock.sh
 
-./file_system.sh
+./file-system.sh
