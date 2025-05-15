@@ -5,3 +5,5 @@ EOF
 
 mkdir ~/run
 mkdir ~/vault
+
+# A restart is needed after this step
