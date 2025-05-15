@@ -1,5 +1,7 @@
-echo -e "run\tUsers/$(whoami)/run" | sudo tee -a /etc/syntheic.conf
-echo -e "vault\tUsers/$(whoami)/vault" | sudo tee -a /etc/synthetic.conf
+sudo tee -a /etc/synthetic.conf <<EOF
+run	Users/$(whoami)/run
+vault	Users/$(whoami)/vault
+EOF
 
 mkdir ~/run
 mkdir ~/vault
