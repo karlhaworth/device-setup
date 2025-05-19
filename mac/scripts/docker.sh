@@ -13,5 +13,7 @@ brew install colima
 
 brew services start colima
 
+ sudo ln -sf $HOME/.colima/default/docker.sock /var/run/docker.sock
+
 brew install grype
 brew install dive
