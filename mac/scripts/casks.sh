@@ -1,5 +1,6 @@
 brew install --cask chromium
 brew install --cask clocker
+brew install --cask deskpad
 brew install --cask drawio
 brew install --cask bruno
 brew install --cask iterm2
