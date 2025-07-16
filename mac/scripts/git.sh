@@ -56,6 +56,7 @@ EOF
 
 git config --global core.excludesfile ~/.gitignore
 git config --global push.autoSetupRemote true
+git config --global core.symlinks true
 gh config set pager cat
 
 gpg --armor --export $KEYID
