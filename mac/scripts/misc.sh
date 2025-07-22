@@ -10,3 +10,5 @@ brew install dockutil
 
 # timeout
 brew install coreutils
+
+brew install aider
