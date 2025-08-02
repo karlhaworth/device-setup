@@ -1,23 +1,17 @@
-brew install jenv
+brew tap sdkman/tap
+brew install sdkman-cli
+export SDKMAN_DIR=$(brew --prefix sdkman-cli)/libexec
+[ -s "${SDKMAN_DIR}/bin/sdkman-init.sh" ] && source "${SDKMAN_DIR}/bin/sdkman-init.sh"
 
-cat << 'EOF' | tee -a ~/.zshrc > /dev/null
+sdk install java 17.0.12-tem
+sdk use java 17.0.12-tem
+sdk default java 17.0.12-tem
 
-export PATH="$HOME/.jenv/bin:$PATH"
-eval "$(jenv init -)"
+sdk install maven
+sdk default maven
 
-EOF
-
-brew install openjdk@17 openjdk@21 openjdk
-
-source ~/.zshrc
-
-jenv add /opt/homebrew/opt/openjdk@17/libexec/openjdk.jdk/Contents/Home
-
-jenv add /opt/homebrew/opt/openjdk@21/libexec/openjdk.jdk/Contents/Home
-
-brew install maven gradle
-
-jenv enable-plugin export
+sdk install gradle
+sdk default gradle
 
 brew install intellij-idea
 
