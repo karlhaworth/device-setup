@@ -7,11 +7,11 @@ sdk install java 17.0.12-tem
 sdk use java 17.0.12-tem
 sdk default java 17.0.12-tem
 
-sdk install maven
-sdk default maven
+sdk install maven 3.9.10
+sdk default maven 3.9.10
 
-sdk install gradle
-sdk default gradle
+sdk install gradle 3.9.10
+sdk default gradle 3.9.10
 
 brew install intellij-idea
 
