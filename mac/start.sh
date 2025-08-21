@@ -1,36 +1,25 @@
-### XCODE
 xcode-select --install
 
-cd scripts
+./scripts/brew.sh
 
-./brew.sh
+brew bundle install --file=Brewfile
 
-./misc.sh
+./scripts/oh-my-zsh.sh
 
-./zsh.sh
+./scripts/vscode.sh
 
-./shell.sh
+./scripts/git.sh
 
-./casks.sh
+./scripts/docker.sh
 
-./vscode.sh
+./scripts/sdkman.sh
 
-./git.sh
+./scripts/nvm.sh
 
-./docker.sh
+./scripts/dock.sh
 
-./kubernetes.sh
+./scripts/file-system.sh
 
-./python.sh
+./scripts/go.sh
 
-./node.sh
-
-./java.sh
-
-./go.sh
-
-./zsh-shortcuts.sh
-
-./dock.sh
-
-./file-system.sh
+./scripts/intellij-idea.sh

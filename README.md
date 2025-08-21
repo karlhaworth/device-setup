@@ -10,6 +10,12 @@ cd mac
 bash start.sh
 ```
 
+### ZSHRC
+
+```zsh
+for config (~/mac/zsh-configs/*.zsh) source $config
+```
+
 ### Update
 
 ```zsh
