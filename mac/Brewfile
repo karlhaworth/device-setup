@@ -6,6 +6,7 @@ brew 'dockutil'
 ## Git and related tools
 brew 'git'
 brew 'gh'
+brew 'act'
 
 brew 'gpg2'
 brew 'gnupg'
@@ -21,6 +22,10 @@ brew 'shellcheck'
 brew 'jq'
 brew 'yq'
 brew 'watch'
+brew 'mkdocs'
+brew 'prettier'
+brew 'scorecard'
+brew 'trivy'
 
 #### Python and related tools
 
@@ -80,6 +85,8 @@ cask 'bruno'
 cask 'chromium'
 cask 'clocker'
 cask 'drawio'
+cask 'dbeaver-community'
+cask 'firefox@developer-edition'
 cask 'deskpad'
 cask 'iterm2'
 cask 'keepingyouawake'
@@ -87,6 +94,7 @@ cask 'microsoft-edge'
 cask 'visual-studio-code'
 cask 'zoom'
 cask 'trex'
+cask 'zen'
 
 ## VS Code Extensions
 
