@@ -1,0 +1,1 @@
+idea installPlugins io.snyk-intelli-plugin org.sonarlint.idea com.github.copilot

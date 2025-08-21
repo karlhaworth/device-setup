@@ -1,0 +1,123 @@
+# Brewfile for macOS setup
+
+## Dock Utilities
+brew 'dockutil'
+
+## Git and related tools
+brew 'git'
+brew 'gh'
+
+brew 'gpg2'
+brew 'gnupg'
+brew 'pinentry-mac'
+
+### Development Environments
+
+#### Miscellaneous tools
+
+brew 'aider'
+brew 'coreutils'
+brew 'shellcheck'
+brew 'jq'
+brew 'yq'
+brew 'watch'
+
+#### Python and related tools
+
+brew 'python'
+brew 'uv'
+brew 'pipenv'
+brew 'pyenv'
+
+#### Node.js and related tools
+
+brew 'nvm'
+brew 'node'
+brew 'npm'
+brew 'yarn'
+
+#### Java and related tools
+
+tap 'sdkman/tap' || true
+brew 'sdkman-cli'
+brew 'intellij-idea-ultimate'
+
+#### Go and related tools
+brew 'go'
+
+#### Terraform
+
+tap 'hashicorp/tap' || true
+brew 'hashicorp/tap/terraform'
+
+# ZSH and related tools
+
+brew 'zsh-autosuggestions'
+brew 'powerlevel10k'
+
+## Kubernetes tools
+
+tap 'atombender/ktail'  || true
+brew 'atombender/ktail/ktail'
+
+brew 'helm'
+brew 'kubectx'
+
+brew 'openshift-cli'
+
+## Docker and related tools
+
+brew 'docker'
+brew 'docker-buildx'
+brew 'colima'
+
+brew 'grype'
+brew 'dive'
+
+## Casks
+
+cask 'bruno'
+cask 'chromium'
+cask 'clocker'
+cask 'drawio'
+cask 'deskpad'
+cask 'iterm2'
+cask 'keepingyouawake'
+cask 'microsoft-edge'
+cask 'visual-studio-code'
+cask 'zoom'
+cask 'trex'
+
+## VS Code Extensions
+
+vscode "4ops.terraform"
+vscode "adamhartford.vscode-base64"
+vscode "bierner.markdown-mermaid"
+vscode "davidanson.vscode-markdownlint"
+vscode "esbenp.prettier-vscode"
+vscode "exiasr.hadolint"
+vscode "foxundermoon.shell-format"
+vscode "github.copilot"
+vscode "github.copilot-chat"
+vscode "github.vscode-github-actions"
+vscode "github.vscode-pull-request-github"
+vscode "golang.go"
+vscode "hashicorp.hcl"
+vscode "hashicorp.terraform"
+vscode "hediet.vscode-drawio"
+vscode "jflbr.jwt-decoder"
+vscode "jock.svg"
+vscode "mariusalchimavicius.json-to-ts"
+vscode "me-dutour-mathieu.vscode-github-actions"
+vscode "ms-azuretools.vscode-docker"
+vscode "ms-python.black-formatter"
+vscode "ms-python.debugpy"
+vscode "ms-python.python"
+vscode "ms-python.vscode-pylance"
+vscode "ms-sarifvscode.sarif-viewer"
+vscode "orta.vscode-jest"
+vscode "redhat.vscode-yaml"
+vscode "rosshamish.kuskus-kusto-language-server"
+vscode "streetsidesoftware.code-spell-checker"
+vscode "waderyan.gitblame"
+vscode "wdhongtw.gpg-indicator"
