@@ -29,10 +29,7 @@ brew 'trivy'
 
 #### Python and related tools
 
-brew 'python'
 brew 'uv'
-brew 'pipenv'
-brew 'pyenv'
 
 #### Node.js and related tools
 
