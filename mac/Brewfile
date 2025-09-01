@@ -66,6 +66,8 @@ brew 'helm'
 brew 'kubectx'
 
 brew 'openshift-cli'
+brew 'kubescape'
+brew 'kustomize'
 
 ## Docker and related tools
 
