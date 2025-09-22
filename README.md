@@ -16,11 +16,25 @@ bash start.sh
 for config (~/mac/zsh-configs/*.zsh) source $config
 ```
 
-### Update
+### Upgrade Software
 
 ```zsh
 brew upgrade
 sudo softwareupdate --install --all
+```
+
+#### Brew Update
+
+This command updates Homebrew itself and fetches the latest information about available packages (formulas and casks) from the Homebrew repositories on GitHub.
+
+```zsh
+brew update
+```
+
+#### Brew Upgrade Casks
+
+```zsh
+brew upgrade --casks --greedy --verbose
 ```
 
 ### Cleanup
