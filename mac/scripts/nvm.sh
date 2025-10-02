@@ -1,1 +1,0 @@
-nvm install --lts --default
