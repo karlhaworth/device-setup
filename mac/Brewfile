@@ -55,7 +55,12 @@ brew 'hashicorp/tap/terraform'
 # ZSH and related tools
 
 brew 'zsh-autosuggestions'
-brew 'powerlevel10k'
+brew 'starship'
+brew 'fontconfig'
+cask 'font-jetbrains-mono-nerd-font'
+cask 'font-caskaydia-cove-nerd-font'
+cask 'font-iosevka-term-nerd-font'
+cask 'font-fira-mono-nerd-fo'
 
 ## Kubernetes tools
 
