@@ -55,6 +55,7 @@ brew 'hashicorp/tap/terraform'
 # ZSH and related tools
 
 brew 'zsh-autosuggestions'
+brew 'zsh-syntax-highlighting'
 brew 'starship'
 brew 'fontconfig'
 cask 'font-jetbrains-mono-nerd-font'
