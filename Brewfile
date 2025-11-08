@@ -42,7 +42,6 @@ brew 'yarn'
 
 tap 'sdkman/tap' || true
 brew 'sdkman-cli'
-brew 'intellij-idea-ultimate'
 
 #### Go and related tools
 brew 'go'
