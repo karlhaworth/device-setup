@@ -41,6 +41,7 @@ git config --global commit.gpgsign true
 
 cat > ~/.gitignore << EOF
 .tool-versions
+.DS_Store
 EOF
 
 git config --global core.excludesfile ~/.gitignore
