@@ -33,7 +33,7 @@ brew 'uv'
 
 #### Node.js and related tools
 
-brew 'fnm'
+brew 'volta'
 brew 'node'
 brew 'npm'
 brew 'yarn'
