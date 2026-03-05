@@ -60,7 +60,7 @@ brew 'fontconfig'
 cask 'font-jetbrains-mono-nerd-font'
 cask 'font-caskaydia-cove-nerd-font'
 cask 'font-iosevka-term-nerd-font'
-cask 'font-fira-mono-nerd-fo'
+cask 'font-fira-mono-nerd-font'
 
 ## Kubernetes tools
 
