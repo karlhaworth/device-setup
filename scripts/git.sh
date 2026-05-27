@@ -2,11 +2,39 @@
 
 stty sane
 
-read -p "Enter name: " name
-read -s -p "Enter password: " password
-echo
-read -p "Enter email: " email
-echo
+name=""
+email=""
+ssh_key_file="$HOME/.ssh/id_ed25519_github"
+
+while [[ "$#" -gt 0 ]]; do
+  case "$1" in
+    --name)
+      name="$2"
+      shift 2
+      ;;
+    --email)
+      email="$2"
+      shift 2
+      ;;
+    --ssh-key-file)
+      ssh_key_file="$2"
+      shift 2
+      ;;
+    *)
+      echo "Usage: $0 --name NAME --email EMAIL [--ssh-key-file PATH]"
+      exit 1
+      ;;
+  esac
+done
+
+name="${name:-${GIT_NAME:-$(git config --global user.name)}}"
+email="${email:-${GIT_EMAIL:-$(git config --global user.email)}}"
+
+if [[ -z "$name" || -z "$email" ]]; then
+  echo "Error: name and email are required."
+  echo "Usage: $0 --name NAME --email EMAIL [--ssh-key-file PATH]"
+  exit 1
+fi
 
 # Setup GIT
 
@@ -16,7 +44,17 @@ git config --global pull.rebase false
 
 # SSH KEY
 
-ssh-keygen -t rsa -b 4096 -C "$email" -P "$password" -f ~/.ssh/id_rsa
+mkdir -p "$HOME/.ssh"
+chmod 700 "$HOME/.ssh"
+
+if [[ -f "$ssh_key_file" ]]; then
+  echo "SSH key already exists at $ssh_key_file. Skipping generation."
+else
+  ssh-keygen -t ed25519 -C "$email" -N "" -f "$ssh_key_file"
+fi
+
+echo "Generated GitHub SSH public key: ${ssh_key_file}.pub"
+cat "${ssh_key_file}.pub"
 
 # GPG
 
