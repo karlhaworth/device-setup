@@ -26,7 +26,6 @@ brew 'mkdocs'
 brew 'prettier'
 brew 'scorecard'
 brew 'trivy'
-brew 'syntax-highlight'
 
 #### Python and related tools
 
@@ -107,6 +106,7 @@ cask 'visual-studio-code'
 cask 'zoom'
 cask 'trex'
 cask 'zen'
+cask 'syntax-highlight'
 
 ## VS Code Extensions
 
