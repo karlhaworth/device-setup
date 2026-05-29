@@ -26,6 +26,7 @@ brew 'mkdocs'
 brew 'prettier'
 brew 'scorecard'
 brew 'trivy'
+brew 'syntax-highlight'
 
 #### Python and related tools
 
