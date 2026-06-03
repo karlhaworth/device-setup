@@ -80,6 +80,7 @@ brew 'ktop'
 ## Docker and related tools
 
 brew 'docker'
+brew 'docker-credential-helper'
 brew 'docker-buildx'
 brew 'docker-compose'
 brew 'colima'

@@ -5,6 +5,7 @@ stty sane
 name=""
 email=""
 ssh_key_file="$HOME/.ssh/id_ed25519_github"
+setup_ssh_config=false
 
 while [[ "$#" -gt 0 ]]; do
   case "$1" in
@@ -19,6 +20,10 @@ while [[ "$#" -gt 0 ]]; do
     --ssh-key-file)
       ssh_key_file="$2"
       shift 2
+      ;;
+    --ssh-config)
+      setup_ssh_config=true
+      shift 1
       ;;
     *)
       echo "Usage: $0 --name NAME --email EMAIL [--ssh-key-file PATH]"
@@ -55,6 +60,29 @@ fi
 
 echo "Generated GitHub SSH public key: ${ssh_key_file}.pub"
 cat "${ssh_key_file}.pub"
+
+# Optionally write SSH config for GitHub to use this key
+if [[ "$setup_ssh_config" == true ]]; then
+  ssh_config="$HOME/.ssh/config"
+  mkdir -p "$(dirname "$ssh_config")"
+  # Remove any previous block we manage between markers, then append new block
+  if [[ -f "$ssh_config" ]]; then
+    sed -i.bak '/# BEGIN GITHUB/,/# END GITHUB/d' "$ssh_config" || true
+  fi
+
+  cat >> "$ssh_config" << EOF
+# BEGIN GITHUB
+Host github.com
+  HostName github.com
+  User git
+  IdentityFile $ssh_key_file
+  IdentitiesOnly yes
+# END GITHUB
+EOF
+
+  chmod 600 "$ssh_config"
+  echo "Updated SSH config at $ssh_config to use key $ssh_key_file"
+fi
 
 # GPG
 
