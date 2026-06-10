@@ -16,10 +16,26 @@ while [[ "$#" -gt 0 ]]; do
 done
 
 mkdir -p "$(dirname "$FILE")"
-if [ ! -f "$FILE" ]; then
-  echo '{ "cliPluginsExtraDirs": ["/opt/homebrew/lib/docker/cli-plugins"] }' > "$FILE"
+
+cliPluginDirs=()
+if [[ -d "/opt/homebrew/lib/docker/cli-plugins" ]]; then
+  cliPluginDirs+=("/opt/homebrew/lib/docker/cli-plugins")
+fi
+if [[ -d "/usr/local/lib/docker/cli-plugins" ]]; then
+  cliPluginDirs+=("/usr/local/lib/docker/cli-plugins")
+fi
+if [[ -d "$HOME/.docker/cli-plugins" ]]; then
+  cliPluginDirs+=("$HOME/.docker/cli-plugins")
+fi
+if [[ ${#cliPluginDirs[@]} -eq 0 ]]; then
+  cliPluginDirs=("/opt/homebrew/lib/docker/cli-plugins")
+fi
+
+cliPluginDirsJson=$(printf '%s\n' "${cliPluginDirs[@]}" | jq -R . | jq -s .)
+if [[ ! -f "$FILE" ]]; then
+  jq -n --argjson dirs "$cliPluginDirsJson" '{cliPluginsExtraDirs: $dirs}' > "$FILE"
 else
-  jq '.cliPluginsExtraDirs = ["/opt/homebrew/lib/docker/cli-plugins"]' "$FILE" > temp.json && mv temp.json "$FILE"
+  jq --argjson dirs "$cliPluginDirsJson" '.cliPluginsExtraDirs = $dirs' "$FILE" > temp.json && mv temp.json "$FILE"
 fi
 
 # Prefer Docker Desktop's osxkeychain helper when available
