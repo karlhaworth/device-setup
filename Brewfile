@@ -16,7 +16,6 @@ brew 'pinentry-mac'
 
 #### Miscellaneous tools
 
-brew 'aider'
 brew 'coreutils'
 brew 'shellcheck'
 brew 'jq'
@@ -108,38 +107,15 @@ cask 'zoom'
 cask 'trex'
 cask 'zen'
 cask 'syntax-highlight'
+cask 'ollama'
 
 ## VS Code Extensions
 
-vscode "4ops.terraform"
-vscode "adamhartford.vscode-base64"
-vscode "bierner.markdown-mermaid"
-vscode "davidanson.vscode-markdownlint"
-vscode "esbenp.prettier-vscode"
-vscode "exiasr.hadolint"
-vscode "foxundermoon.shell-format"
-vscode "github.copilot"
-vscode "github.copilot-chat"
+vscode "astral-sh.ty"
+vscode "charliemarsh.ruff"
 vscode "github.vscode-github-actions"
 vscode "github.vscode-pull-request-github"
-vscode "golang.go"
-vscode "hashicorp.hcl"
-vscode "hashicorp.terraform"
-vscode "hediet.vscode-drawio"
-vscode "jflbr.jwt-decoder"
-vscode "jock.svg"
-vscode "mariusalchimavicius.json-to-ts"
-vscode "me-dutour-mathieu.vscode-github-actions"
-vscode "ms-azuretools.vscode-docker"
-vscode "ms-python.black-formatter"
+vscode "hedeit.vscode-drawio"
 vscode "ms-python.debugpy"
 vscode "ms-python.python"
 vscode "ms-python.vscode-pylance"
-vscode "ms-sarifvscode.sarif-viewer"
-vscode "orta.vscode-jest"
-vscode "redhat.vscode-yaml"
-vscode "rosshamish.kuskus-kusto-language-server"
-vscode "streetsidesoftware.code-spell-checker"
-vscoed "timonwong.shellcheck"
-vscode "waderyan.gitblame"
-vscode "wdhongtw.gpg-indicator"
