@@ -72,6 +72,7 @@ brew 'kubectx'
 brew 'openshift-cli'
 brew 'kubescape'
 brew 'kustomize'
+brew 'krew'
 brew 'derailed/k9s/k9s'
 tap 'vladimirvivien/oss-tools' || true
 brew 'ktop'
