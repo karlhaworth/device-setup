@@ -63,8 +63,7 @@ cask 'font-fira-mono-nerd-font'
 
 ## Kubernetes tools
 
-tap 'atombender/ktail'  || true
-brew 'atombender/ktail/ktail'
+brew 'stern'
 
 brew 'helm'
 brew 'kubectx'
