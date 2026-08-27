@@ -3,3 +3,6 @@
 echo >> ~/.zprofile
 echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
 eval "$(/opt/homebrew/bin/brew shellenv)"
+
+brew analytics off
+export HOMEBREW_NO_INSTALL_FROM_API=0
