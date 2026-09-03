@@ -25,6 +25,7 @@ brew 'mkdocs'
 brew 'prettier'
 brew 'scorecard'
 brew 'trivy'
+brew 'shfmt'
 
 #### Python and related tools
 
