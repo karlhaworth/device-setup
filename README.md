@@ -10,7 +10,17 @@ cd mac
 bash start.sh
 ```
 
+### ZPROFILE
+
+Login-only setup (env vars/PATH that only need to be computed once per login, e.g. `brew shellenv`) goes here, keeping it out of every new interactive shell:
+
+```zsh
+for config (~/zprofile-configs/*.zsh) source $config
+```
+
 ### ZSHRC
+
+Everything else (interactive-shell state: prompt, aliases, completions, history options) goes here, since it runs on every new shell:
 
 ```zsh
 for config (~/zsh-configs/*.zsh) source $config
