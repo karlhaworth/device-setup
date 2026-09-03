@@ -7,28 +7,28 @@ email=""
 ssh_key_file="$HOME/.ssh/id_ed25519_github"
 setup_ssh_config=false
 
-while [[ "$#" -gt 0 ]]; do
+while [[ "$" -gt 0 ]]; do
   case "$1" in
-    --name)
-      name="$2"
-      shift 2
-      ;;
-    --email)
-      email="$2"
-      shift 2
-      ;;
-    --ssh-key-file)
-      ssh_key_file="$2"
-      shift 2
-      ;;
-    --ssh-config)
-      setup_ssh_config=true
-      shift 1
-      ;;
-    *)
-      echo "Usage: $0 --name NAME --email EMAIL [--ssh-key-file PATH]"
-      exit 1
-      ;;
+  --name)
+    name="$2"
+    shift 2
+    ;;
+  --email)
+    email="$2"
+    shift 2
+    ;;
+  --ssh-key-file)
+    ssh_key_file="$2"
+    shift 2
+    ;;
+  --ssh-config)
+    setup_ssh_config=true
+    shift 1
+    ;;
+  *)
+    echo "Usage: $0 --name NAME --email EMAIL [--ssh-key-file PATH]"
+    exit 1
+    ;;
   esac
 done
 
@@ -70,7 +70,7 @@ if [[ "$setup_ssh_config" == true ]]; then
     sed -i.bak '/# BEGIN GITHUB/,/# END GITHUB/d' "$ssh_config" || true
   fi
 
-  cat >> "$ssh_config" << EOF
+  cat >>"$ssh_config" <<EOF
 # BEGIN GITHUB
 Host github.com
   HostName github.com
@@ -87,17 +87,19 @@ fi
 # GPG
 
 mkdir ~/.gnupg
-echo 'use-agent' > ~/.gnupg/gpg.conf
-echo 'export GPG_TTY=$(tty)' >> ~/.zshrc
+echo 'use-agent' >~/.gnupg/gpg.conf
+echo 'export GPG_TTY=$(tty)' >>~/.zshrc
 chmod 700 ~/.gnupg
-gpg --full-gen-key --batch <(echo "Key-Type: 1"; \
-                             echo "Key-Length: 4096"; \
-                             echo "Subkey-Type: 1"; \
-                             echo "Subkey-Length: 4096"; \
-                             echo "Expire-Date: 0"; \
-                             echo "Name-Real: $name"; \
-                             echo "Name-Email: $email"; \
-                             echo "%no-protection"; )
+gpg --full-gen-key --batch <(
+  echo "Key-Type: 1"
+  echo "Key-Length: 4096"
+  echo "Subkey-Type: 1"
+  echo "Subkey-Length: 4096"
+  echo "Expire-Date: 0"
+  echo "Name-Real: $name"
+  echo "Name-Email: $email"
+  echo "%no-protection"
+)
 KEYID=$(gpg -k | awk '{for(i=1;i<=NF;i++) if($i ~ /^[A-F0-9]{40}$/) print $i}')
 git config --global gpg.program $(which gpg)
 git config --global user.signingkey $KEYID
@@ -105,7 +107,7 @@ git config --global commit.gpgsign true
 
 # Global .gitignore
 
-cat > ~/.gitignore << EOF
+cat >~/.gitignore <<EOF
 .tool-versions
 .DS_Store
 EOF

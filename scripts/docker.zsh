@@ -2,16 +2,16 @@ FILE="$HOME/.docker/config.json"
 
 # parse optional registry args for configuring credHelpers
 registries=()
-while [[ "$#" -gt 0 ]]; do
+while [[ "$" -gt 0 ]]; do
   case "$1" in
-    --registry)
-      registries+=("$2")
-      shift 2
-      ;;
-    *)
-      echo "Usage: $0 [--registry REGISTRY ...]"
-      exit 1
-      ;;
+  --registry)
+    registries+=("$2")
+    shift 2
+    ;;
+  *)
+    echo "Usage: $0 [--registry REGISTRY ...]"
+    exit 1
+    ;;
   esac
 done
 
@@ -33,9 +33,9 @@ fi
 
 cliPluginDirsJson=$(printf '%s\n' "${cliPluginDirs[@]}" | jq -R . | jq -s .)
 if [[ ! -f "$FILE" ]]; then
-  jq -n --argjson dirs "$cliPluginDirsJson" '{cliPluginsExtraDirs: $dirs}' > "$FILE"
+  jq -n --argjson dirs "$cliPluginDirsJson" '{cliPluginsExtraDirs: $dirs}' >"$FILE"
 else
-  jq --argjson dirs "$cliPluginDirsJson" '.cliPluginsExtraDirs = $dirs' "$FILE" > temp.json && mv temp.json "$FILE"
+  jq --argjson dirs "$cliPluginDirsJson" '.cliPluginsExtraDirs = $dirs' "$FILE" >temp.json && mv temp.json "$FILE"
 fi
 
 # ensure user cli-plugins dir exists and add compose/buildx plugin metadata to config
@@ -49,7 +49,7 @@ jq --arg cp "$compose_path" --arg bp "$buildx_path" '
   .cliPlugins = (.cliPlugins // {}) |
   .cliPlugins["docker-compose"] = {"path": $cp, "enabled": true} |
   .cliPlugins["docker-buildx"] = {"path": $bp, "enabled": true}
-' "$FILE" > temp.json && mv temp.json "$FILE"
+' "$FILE" >temp.json && mv temp.json "$FILE"
 
 # Informational guidance if plugins are missing
 if ! docker compose version >/dev/null 2>&1; then
@@ -74,11 +74,11 @@ fi
 
 if [[ -n "$creds_store" ]]; then
   # set credsStore
-  jq --arg cs "$creds_store" '.credsStore = $cs' "$FILE" > temp.json && mv temp.json "$FILE"
+  jq --arg cs "$creds_store" '.credsStore = $cs' "$FILE" >temp.json && mv temp.json "$FILE"
 
   # add any registry-specific helpers
   for reg in "${registries[@]}"; do
-    jq --arg reg "$reg" --arg cs "$creds_store" '.credHelpers[$reg] = $cs' "$FILE" > temp.json && mv temp.json "$FILE"
+    jq --arg reg "$reg" --arg cs "$creds_store" '.credHelpers[$reg] = $cs' "$FILE" >temp.json && mv temp.json "$FILE"
   done
 
   echo "Configured Docker to use credential store: $creds_store"
