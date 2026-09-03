@@ -1,2 +1,4 @@
+# Work machine only. Applied by: ./start.sh work
 
-brew 'intellij-idea-ultimate'
+# 'intellij-idea' is the Ultimate edition cask; 'intellij-idea-ce' is Community.
+cask 'intellij-idea'

@@ -1,25 +1,74 @@
-xcode-select --install
+#!/usr/bin/env zsh
+#
+# Provisions a Mac from scratch.
+#
+#   ./start.sh [home|work]
+#
+# Git identity is required for the git step; pass it via the environment:
+#   GIT_NAME="Your Name" GIT_EMAIL="you@example.com" ./start.sh work
 
-./scripts/brew.sh
+set -euo pipefail
 
+repo_dir="${0:A:h}"
+cd "$repo_dir"
+
+profile="${1:-}"
+if [[ -n "$profile" && "$profile" != "home" && "$profile" != "work" ]]; then
+  echo "Usage: $0 [home|work]" >&2
+  exit 1
+fi
+
+step() { echo "\n==> $*" }
+
+step "Xcode command line tools"
+xcode-select --install 2>/dev/null || echo "already installed"
+
+step "Homebrew"
+./scripts/brew-install.zsh
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
+step "Brewfile"
 brew bundle install --file=Brewfile
 
-./scripts/oh-my-zsh.sh
+if [[ -n "$profile" ]]; then
+  step "Brewfile.${profile}"
+  brew bundle install --file="Brewfile.${profile}"
+fi
 
-./scripts/vscode.sh
+step "Shell config"
+./scripts/dotfiles.zsh
 
-./scripts/git.sh
+step "Git, SSH and GPG"
+./scripts/git.zsh
 
-./scripts/docker.sh
+step "File system"
+./scripts/file-system.zsh
 
-./scripts/sdkman.sh
+step "Language toolchains"
+./scripts/sdkman.zsh
+./scripts/volta.zsh
+./scripts/uv.zsh
+./scripts/go.zsh
 
-./scripts/nvm.sh
+step "Package manager hardening"
+./scripts/npm.zsh
+./scripts/pip.zsh
 
-./scripts/dock.sh
+step "Kubernetes"
+./scripts/krew.zsh
 
-./scripts/file-system.sh
+step "Docker"
+./scripts/docker.zsh
 
-./scripts/go.sh
+step "VS Code"
+./scripts/vscode.zsh
 
-./scripts/intellij-idea.sh
+step "Dock"
+./scripts/dock.zsh
+
+if [[ "$profile" == "work" ]]; then
+  step "IntelliJ IDEA"
+  ./scripts/intellij-idea.zsh
+fi
+
+echo "\nDone. A restart is required for scripts/file-system.zsh to take effect."

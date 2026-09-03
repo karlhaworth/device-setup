@@ -5,26 +5,38 @@
 ### Setup
 
 ```zsh
-cd mac
-
-bash start.sh
+GIT_NAME="Your Name" GIT_EMAIL="you@example.com" ./start.sh work
 ```
 
-### ZPROFILE
+The profile argument is optional and selects a host-specific Brewfile on top of
+the shared one: `home` applies `Brewfile.home`, `work` applies `Brewfile.work`.
+A restart is needed afterwards for `scripts/file-system.zsh` to take effect.
 
-Login-only setup (env vars/PATH that only need to be computed once per login, e.g. `brew shellenv`) goes here, keeping it out of every new interactive shell:
+### Shell config
 
-```zsh
-for config (~/zprofile-configs/*.zsh) source $config
-```
+`scripts/dotfiles.zsh` symlinks both config directories into `~` and adds a
+sourcing loop to each rc file. It is idempotent and never overwrites existing
+rc content, so it is safe to re-run on an already-configured machine.
 
-### ZSHRC
+| Directory           | Sourced from | Runs                  | Holds                                                  |
+| ------------------- | ------------ | --------------------- | ------------------------------------------------------ |
+| `zprofile-configs/` | `~/.zprofile`| once per login        | env vars and `PATH` (`brew shellenv`, `DOCKER_HOST`)   |
+| `zsh-configs/`      | `~/.zshrc`   | every interactive shell | prompt, aliases, completions, history options        |
 
-Everything else (interactive-shell state: prompt, aliases, completions, history options) goes here, since it runs on every new shell:
+Anything that only needs computing once belongs in `zprofile-configs/` - it is
+inherited by every child shell, so putting it in `zsh-configs/` just pays the
+cost again on every new tab.
 
-```zsh
-for config (~/zsh-configs/*.zsh) source $config
-```
+### Toolchain ownership
+
+Each language has exactly one version manager. Adding the equivalent Homebrew
+formula shadows it and is deliberately excluded from the Brewfile:
+
+| Language | Owned by  | Do not `brew install`         |
+| -------- | --------- | ----------------------------- |
+| Node     | volta     | `node`, `npm`, `yarn`         |
+| Java     | sdkman    | `openjdk@*`, `maven`, `gradle`|
+| Python   | uv        | `python@*`                    |
 
 ### Upgrade Software
 

@@ -1,1 +1,7 @@
-brew "dnscontrol"
+# Home machine only. Applied by: ./start.sh home
+
+brew 'dnscontrol'
+
+cask 'backblaze'
+cask 'mullvadvpn'
+cask 'sketchup'

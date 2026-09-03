@@ -2,7 +2,7 @@ FILE="$HOME/.docker/config.json"
 
 # parse optional registry args for configuring credHelpers
 registries=()
-while [[ "$" -gt 0 ]]; do
+while [[ "$#" -gt 0 ]]; do
   case "$1" in
   --registry)
     registries+=("$2")

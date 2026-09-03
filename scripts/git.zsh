@@ -7,7 +7,7 @@ email=""
 ssh_key_file="$HOME/.ssh/id_ed25519_github"
 setup_ssh_config=false
 
-while [[ "$" -gt 0 ]]; do
+while [[ "$#" -gt 0 ]]; do
   case "$1" in
   --name)
     name="$2"
@@ -86,9 +86,9 @@ fi
 
 # GPG
 
-mkdir ~/.gnupg
+mkdir -p ~/.gnupg
 echo 'use-agent' >~/.gnupg/gpg.conf
-echo 'export GPG_TTY=$(tty)' >>~/.zshrc
+# GPG_TTY is declared in zsh-configs/gpg.zsh, not appended here.
 chmod 700 ~/.gnupg
 gpg --full-gen-key --batch <(
   echo "Key-Type: 1"
